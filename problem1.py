@@ -1,11 +1,17 @@
+def count_vowels_and_consonants(text: str):
+    count_vowels = 0
+    count_cons = 0
+    vowels = 'aeiou'
+    for i in text:
+        if i.lower() in vowels:
+            count_vowels += 1
+        elif i.isalpha():
+            count_cons += 1
+    return {
+        "vowels": count_vowels,
+        "consonants": count_cons
+    }
+    
+    
 text = input("Enter the text: ")
-vowels = 'aeiouyAEIOUY'
-puncts = "!@#$%^&*()_-=+[]{}|\\:;\"'<>,./?`~ "
-vowel = 0
-consonant = 0
-for i in text:
-    if i in vowels:
-        vowel +=1
-    elif i not in puncts and not i.isdigit():
-        consonant += 1
-print(f"vowels: {vowel}\n cons: {consonant}")
+print(count_vowels_and_consonants(text))
